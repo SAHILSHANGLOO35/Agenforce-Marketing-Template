@@ -137,12 +137,12 @@ export const DesktopNavbar = () => {
   return (
     <Container className="py-4 px-4 items-center justify-between hidden md:flex">
       <Logo />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-8">
         {navlinks.map((item, index) => (
           <Link
             href={item.href}
             key={index}
-            className="text-neutral-600 text-sm dark:text-neutral-400 font-medium"
+            className="text-neutral-600 text-sm dark:text-neutral-400 font-semibold"
           >
             {item.title}
           </Link>
