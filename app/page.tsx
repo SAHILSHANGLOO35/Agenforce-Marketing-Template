@@ -1,7 +1,9 @@
 import { Features } from "@/components/features";
+import { FeaturesSecondary } from "@/components/features-secondary";
 import { Hero } from "@/components/hero";
 import { LogoCloud } from "@/components/logo-cloud";
 import { Speed } from "@/components/speed";
+import { Trusted } from "@/components/trusted";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <LogoCloud />
       <Features />
       <Speed />
+      <FeaturesSecondary />
+      <Trusted />
     </div>
   );
 }

@@ -9,7 +9,7 @@ import { SkeletonTwo } from "./skeletons/second";
 
 export const Features = () => {
   return (
-    <section className="py-10 md:py-20 lg:py-32 px-4">
+    <section className="pt-10 md:pt-20 lg:pt-32 px-4">
       <Container className="flex flex-col">
         <div className="flex lg:flex-row flex-col lg:items-baseline-last justify-between gap-10">
           <Heading className="text-center lg:text-left">

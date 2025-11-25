@@ -4,7 +4,13 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { motion } from "motion/react";
 
-export const LandingImages = () => {
+export const LandingImages = ({
+  firstImage = "/3.webp",
+  secondImage = "/4.webp",
+}: {
+  firstImage?: string;
+  secondImage?: string;
+}) => {
   return (
     <div className="relative">
       <div className="absolute inset-x-0 mask-t-from-10% w-full h-full"></div>
@@ -25,10 +31,11 @@ export const LandingImages = () => {
           className="perspective-[4000px]"
         >
           <Image
-            src="/4.webp"
+            src={secondImage}
             alt="Hero"
             height={1080}
             width={1920}
+            draggable={false}
             className={cn(
               "absolute inset-0 rounded-lg mask-r-from-20% mask-b-from-20% shadow-xl object-cover"
             )}
@@ -52,13 +59,14 @@ export const LandingImages = () => {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="perspective-[4000px] translate-x-20 -translate-y-10 md:-translate-y-20 lg:-translate-y-40"
+          className="perspective-[4000px]  translate-x-20 -translate-y-10 md:-translate-y-20 lg:-translate-y-40"
         >
           <Image
-            src="/3.webp"
+            src={firstImage}
             alt="Hero"
             height={1080}
             width={1920}
+            draggable={false}
             className={cn(
               "absolute inset-0 rounded-lg mask-r-from-50% mask-b-from-50% shadow-xl select-none object-cover pointer-events-none transform-3d"
             )}

@@ -4,19 +4,19 @@ import { Heading } from "./heading";
 import { SubHeading } from "./subheading";
 import { LandingImages } from "./landing-page";
 
-export const Speed = () => {
+export const Trusted = () => {
   return (
     <section className="pt-10 md:pt-20 lg:pt-32 px-4 overflow-hidden">
       <Container>
         <Heading as="h1" className="lg:text-left text-center">
-          Agents that do the work <br /> Approvals that keep you safe.
+          Governed AI, <br /> Trusted Outcomes
         </Heading>
 
         <SubHeading className="py-8 lg:text-left text-center mx-auto lg:mx-0">
-          Deploy AI agents that plan, act through your tools, and report
-          outcomes-without changing how your teams work.
+          Deploy AI agents with built-in approvals, brand guardrails, and audit
+          trails. Every step is visible, reviewable, and compliant.
         </SubHeading>
-        <LandingImages />
+        <LandingImages firstImage="/6.webp" secondImage="/5.webp" />
       </Container>
     </section>
   );
