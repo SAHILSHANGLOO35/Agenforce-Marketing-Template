@@ -5,9 +5,8 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { SkeletonOne } from "./skeletons/first";
 import { SkeletonTwo } from "./skeletons/second";
-import { FileIcon, HumanIcon, SettingsIcon } from "@/icons";
 
-export const FeaturesSecondary = () => {
+export const FeaturesTertiary = () => {
   return (
     <section className="pt-10 md:pt20 lg:pt-32 px-4">
       <Container>
@@ -15,11 +14,11 @@ export const FeaturesSecondary = () => {
           <div>
             <div className="p-4 md:p-8">
               <h2 className="text-lg font-bold text-neutral-800">
-                Agent Studio
+                Audit Trail
               </h2>
               <p className="text-neutral-600 text-balance max-w-md mt-2">
-                Design, launch and customize AI agents for marketing, sales,
-                support and ops, built around your workflows.
+                Tracks every agent action with full input-output visibility and
+                timestamps.
               </p>
             </div>
             <CardSkeleton>
@@ -30,36 +29,20 @@ export const FeaturesSecondary = () => {
           <div>
             <div className="p-4 md:p-8">
               <h2 className="text-lg font-bold text-neutral-800">
-                Multi-Agent Orchestration
+                Role-Based Access
               </h2>
               <p className="text-neutral-600 text-balance max-w-md mt-2">
-                Coordinate multiple agents across workflows using memory,
-                interrupts, and conditional logic.
+                Controls who can launch, review, or manage agents based on
+                roles.
               </p>
             </div>
-            <CardSkeleton className="mask-radial-from-50% mask-t-from-50%">
+            <CardSkeleton>
               <SkeletonTwo />
             </CardSkeleton>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 md:mt-20">
-          <SecondaryFeatures
-            icon={<FileIcon className="size-4" />}
-            title="Workflow Automation"
-            description="Automate campaigns, tickets and CRM updates without manual handoffs."
-          />
-          <SecondaryFeatures
-            icon={<SettingsIcon className="size-4" />}
-            title="Integration Fabric."
-            description="Connect CRMs, service desks, data warehouses and cloud apps seamlessly."
-          />
-          <SecondaryFeatures
-            icon={<HumanIcon className="size-4" />}
-            title="Human-in-the-Loop"
-            description="Add reviews, approvals and escalations without slowing work."
-          />
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 md:mt-20"></div>
       </Container>
     </section>
   );
