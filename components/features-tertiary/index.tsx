@@ -5,28 +5,32 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { SkeletonOne } from "./skeletons/first";
 import { SkeletonTwo } from "./skeletons/second";
+import { SkeletonThree } from "./skeletons/three";
+import { SkeletonFour } from "./skeletons/fourth";
 
 export const FeaturesTertiary = () => {
   return (
     <section className="pt-10 md:pt20 lg:pt-32 px-4">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-y md:divide-y-0 md:divide-x divide-neutral-200 dark:divide-neutral-800">
-          <div>
-            <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
-                Audit Trail
-              </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
-                Tracks every agent action with full input-output visibility and
-                timestamps.
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-neutral-200 dark:divide-neutral-800">
+          <div className="border-r border-b border-neutral-200 dark:border-neutral-800">
+            <div>
+              <div className="p-4 md:p-8">
+                <h2 className="text-lg font-bold text-neutral-800">
+                  Audit Trail
+                </h2>
+                <p className="text-neutral-600 text-balance max-w-md mt-2">
+                  Tracks every agent action with full input-output visibility
+                  and timestamps.
+                </p>
+              </div>
+              <CardSkeleton>
+                <SkeletonOne />
+              </CardSkeleton>
             </div>
-            <CardSkeleton>
-              <SkeletonOne />
-            </CardSkeleton>
           </div>
 
-          <div>
+          <div className="border-b border-neutral-200 dark:border-neutral-800">
             <div className="p-4 md:p-8">
               <h2 className="text-lg font-bold text-neutral-800">
                 Role-Based Access
@@ -36,13 +40,40 @@ export const FeaturesTertiary = () => {
                 roles.
               </p>
             </div>
-            <CardSkeleton>
+            <CardSkeleton className="mask-radial-from-30%">
               <SkeletonTwo />
             </CardSkeleton>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 md:mt-20"></div>
+          <div className="border-r border-neutral-200 dark:border-neutral-800">
+            <div className="p-4 md:p-8">
+              <h2 className="text-lg font-bold text-neutral-800">
+                Approval Queue
+              </h2>
+              <p className="text-neutral-600 text-balance max-w-md mt-2">
+                Sends agent-generated content to human reviewers before
+                it&apos;s published.
+              </p>
+            </div>
+            <CardSkeleton className="mask-radial-from-20% mask-r-from-50%">
+              <SkeletonThree />
+            </CardSkeleton>
+          </div>
+
+          <div>
+            <div className="p-4 md:p-8">
+              <h2 className="text-lg font-bold text-neutral-800">
+                Guardrail Engine
+              </h2>
+              <p className="text-neutral-600 text-balance max-w-md mt-2">
+                Applies brand, tone, and policy checks before output goes live.
+              </p>
+            </div>
+            <CardSkeleton className="mask-radial-from-80%">
+              <SkeletonFour />
+            </CardSkeleton>
+          </div>
+        </div>
       </Container>
     </section>
   );
