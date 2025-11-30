@@ -59,7 +59,7 @@ const SkeletonCard = ({
   return (
     <div
       className={cn(
-        "max-w-[85%] h-fit my-auto bg-neutral-100 dark:bg-neutral-800 mx-auto w-full p-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl",
+        "max-w-[85%] h-fit my-auto bg-white dark:bg-neutral-900 mx-auto w-full p-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl",
         className
       )}
     >

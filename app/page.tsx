@@ -1,6 +1,8 @@
+import { FAQ } from "@/components/faq";
 import { Features } from "@/components/features";
 import { FeaturesSecondary } from "@/components/features-secondary";
 import { FeaturesTertiary } from "@/components/features-tertiary";
+import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { LogoCloud } from "@/components/logo-cloud";
 import { Speed } from "@/components/speed";
@@ -16,6 +18,8 @@ export default function Home() {
       <FeaturesSecondary />
       <Trusted />
       <FeaturesTertiary />
+      <FAQ />
+      <Footer />
     </div>
   );
 }
