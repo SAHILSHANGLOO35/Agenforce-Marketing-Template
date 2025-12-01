@@ -70,7 +70,7 @@ const SkeletonCard = ({
         </p>
         {badge}
       </div>
-      <p className="text-sm text-neutral-500 dark:text-shadow-neutral-400/80 font-normal mt-3">
+      <p className="text-sm text-neutral-500 dark:text-shadow-neutral-400/80 font-light mt-3">
         {description}
       </p>
       <div className="flex items-center gap-2 flex-wrap mt-3">

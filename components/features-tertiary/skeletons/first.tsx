@@ -136,12 +136,10 @@ export const SkeletonOne = () => {
             initial={{
               opacity: 0,
               y: 10,
-              filter: "blur(5px)",
             }}
             whileInView={{
               opacity: 1,
               y: 0,
-              filter: "blur(0px)",
             }}
             transition={{
               duration: 0.3,
@@ -151,6 +149,7 @@ export const SkeletonOne = () => {
             className="w-full"
           >
             <CardItem
+              index={index}
               key={item.title}
               title={item.title}
               icon={item.icon}
@@ -183,11 +182,13 @@ export const CardItem = ({
   title,
   badge,
   description,
+  index,
 }: {
   icon: React.ReactNode;
   title: string;
   badge: React.ReactNode;
   description: string;
+  index: number;
 }) => {
   return (
     <div className="flex items-center justify-between w-full pl-4 pt-4 relative overflow-hidden">
@@ -199,9 +200,24 @@ export const CardItem = ({
         {badge}
       </div>
 
-      <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-nowrap max-w-[16rem] w-full text-left whitespace-nowrap">
-        {description}
-      </p>
+      <motion.p className="text-sm text-neutral-600 dark:text-neutral-400 flex-nowrap max-w-[16rem] w-full text-left whitespace-nowrap">
+        {description.split("").map((item, idx) => (
+          <motion.span
+            key={idx}
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            transition={{
+              delay: idx * 0.01 + index * 0.1,
+            }}
+          >
+            {item}
+          </motion.span>
+        ))}
+      </motion.p>
     </div>
   );
 };

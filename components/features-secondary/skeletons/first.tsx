@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "motion/react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "motion/react";
 import {
   FileIcon,
   GoogleSheetsIcon,
@@ -12,43 +12,117 @@ import {
 } from "@/icons";
 import { cn } from "@/lib/utils";
 
+interface Items {
+  icon: React.ReactNode;
+  variant: string;
+  title: string;
+  description: string;
+}
+
 export const SkeletonOne = () => {
+  const items = [
+    {
+      icon: <FileIcon className="size-4" />,
+      variant: "blue",
+      title: "Connect Data",
+      description:
+        "Link CRMs, helpdesks, and APIs to give agents secure, role-based access.",
+    },
+    {
+      icon: <HumanIcon className="size-4" />,
+      variant: "red",
+      title: "Human-in-the-Loop",
+      description:
+        "Add reviews, approvals and escalations without slowing work.",
+    },
+    {
+      icon: <SettingsIcon className="size-4" />,
+      variant: "green",
+      title: "Define Processing Logic",
+      description:
+        "Create workflows, decision points, and conditional actions for each task.",
+    },
+  ];
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const [activeCards, setActiveCards] = useState<Items[] | null>(null);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const interval = setInterval(() => {
+      setActiveCards((prev) => {
+        if (!prev) {
+          return [items[0]];
+        }
+        if (prev.length >= items.length) {
+          clearInterval(interval);
+          return prev;
+        }
+        return [items[prev.length], ...prev];
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [items]);
+
   return (
-    <div className="flex-1 flex flex-col gap-2 rounded-t-3xl max-w-sm mx-auto w-full h-full bg-neutral-100 border border-neutral-200 inset-x-0 absolute p-2">
-      <Card
-        icon={<FileIcon className="size-4" />}
-        title="Connect Data"
-        description="Link CRMs, helpdesks, and APIs to give agents secure, role-based access."
-      />
-      <Card
-        icon={<HumanIcon className="size-4" />}
-        variant="red"
-        title="Human-in-the-Loop"
-        description="Add reviews, approvals and escalations without slowing work."
-      />
-      <Card
-        icon={<SettingsIcon className="size-4" />}
-        variant="green"
-        title="Define Processing Logic"
-        description="Create workflows, decision points, and conditional actions for each task."
-      />
+    <div
+      ref={ref}
+      className="flex-1 flex flex-col gap-2 rounded-t-3xl max-w-sm mx-auto w-full h-full bg-neutral-100 border border-neutral-200 inset-x-0 absolute p-2"
+    >
+      {activeCards &&
+        activeCards.map((item) => (
+          <Card
+            key={item.title}
+            icon={item.icon}
+            variant={item.variant}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
     </div>
   );
 };
 
 export const Card = ({
   icon,
-  variant = "blue",
+  variant,
   title,
   description,
 }: {
   icon: React.ReactNode;
-  variant?: "blue" | "red" | "green";
+  variant?: string;
   title: string;
   description: string;
 }) => {
   return (
-    <div className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-2xl bg-white flex items-start gap-4">
+    <motion.div
+      layout
+      initial={{
+        opacity: 0,
+        scale: 0.8,
+        y: -10,
+      }}
+      animate={{
+        opacity: 1,
+        scale: 1,
+        y: 0,
+      }}
+      transition={{
+        layout: {
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        },
+        opacity: { duration: 0.3, ease: "easeOut" },
+        scale: { duration: 0.3, ease: "easeOut" },
+        y: { duration: 0.3, ease: "easeOut" },
+      }}
+      className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-2xl bg-white flex items-start gap-4"
+    >
       <div
         className={cn(
           "size-6 rounded-full text-white flex items-center justify-center shrink-0 mt-1",
@@ -68,7 +142,7 @@ export const Card = ({
           <Tag icon={<GoogleSheetsIcon />} title="Sheets" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

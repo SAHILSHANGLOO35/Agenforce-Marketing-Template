@@ -20,13 +20,16 @@ export const LandingImages = ({
             opacity: 0,
             y: -100,
           }}
-          animate={{
+          whileInView={{
             opacity: 1,
             y: 0,
           }}
           transition={{
             duration: 0.5,
             ease: "easeOut",
+          }}
+          viewport={{
+            once: true,
           }}
           className="perspective-[4000px]"
         >
@@ -50,7 +53,7 @@ export const LandingImages = ({
             opacity: 0,
             y: -100,
           }}
-          animate={{
+          whileInView={{
             opacity: 1,
             y: 0,
           }}
@@ -58,6 +61,9 @@ export const LandingImages = ({
             duration: 0.5,
             delay: 0.1,
             ease: "easeOut",
+          }}
+          viewport={{
+            once: true,
           }}
           className="perspective-[4000px]  translate-x-20 -translate-y-10 md:-translate-y-20 lg:-translate-y-40"
         >
