@@ -26,7 +26,7 @@ export const SkeletonTwo = () => {
       </div>
       <div className="relative h-40 flex-1 mt-4 border border-neutral-200 rounded-2xl bg-neutral-200 group">
         <Pattern />
-        <div className="absolute inset-0 translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 bg-white h-full w-full rounded-2xl">
+        <div className="absolute inset-0 translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 bg-white dark:bg-neutral-800 h-full w-full rounded-2xl">
           <Row
             icon={<IconCheck className="size-4" />}
             text="Fetching Data"
@@ -95,7 +95,9 @@ const Row = ({
         >
           {icon}
         </div>
-        <p className="text-neutral-500 font-medium text-sm">{text}</p>
+        <p className="text-neutral-500 dark:text-neutral-400 font-medium text-sm">
+          {text}
+        </p>
       </div>
       <div className="flex items-center gap-1 text-neutral-400">
         <IconRipple className="size-3" />

@@ -52,19 +52,19 @@ const Question = ({
       className="w-full p-4 md:p-8 bg-neutral-100 dark:bg-neutral-800 overflow-hidden rounded-3xl"
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-black text-lg md:text-2xl font-bold font-display">
+        <h3 className="text-black dark:text-neutral-200 text-lg md:text-2xl font-bold font-display">
           {question}
         </h3>
-        <div className="size-6 relative rounded-full bg-black flex items-center justify-center">
+        <div className="size-6 relative rounded-full bg-black dark:bg-white flex items-center justify-center">
           <IconPlus
             className={cn(
-              "text-white size-6 absolute inset-0 transition-all duration-200",
+              "text-white dark:text-black size-6 absolute inset-0 transition-all duration-200",
               open && "scale-0 rotate-90"
             )}
           />
           <IconMinus
             className={cn(
-              "text-white size-6 absolute inset-0 scale-0 -rotate-90 transition-all duration-200",
+              "text-white dark:text-black size-6 absolute inset-0 scale-0 -rotate-90 transition-all duration-200",
               open && "scale-100 rotate-0"
             )}
           />
@@ -98,7 +98,7 @@ const Question = ({
             delay: 0.2,
             ease: "easeInOut",
           }}
-          className="text-left mt-4 text-neutral-600 dark:text-neutral-800"
+          className="text-left mt-4 text-neutral-600 dark:text-neutral-200"
         >
           {answer}
         </motion.p>

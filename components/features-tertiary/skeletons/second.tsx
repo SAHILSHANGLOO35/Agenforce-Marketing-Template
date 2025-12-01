@@ -20,8 +20,8 @@ export const SkeletonTwo = () => {
         <Item />
         <Item src="/9.webp" />
         <Item containerClassName="from-black/50 via-transparent to-black/50">
-          <div className="h-full w-full flex items-center justify-center bg-white rounded-[12px]">
-            <LogoIcon className="size-12" />
+          <div className="h-full w-full flex items-center justify-center bg-white rounded-[12px] p-2 md:p-0">
+            <LogoIcon className="size-12 dark:text-black" />
           </div>
         </Item>
         <Item src="/10.webp" />
@@ -52,7 +52,7 @@ const Item = ({
   return (
     <div
       className={cn(
-        "w-full justify-self-center aspect-square rounded-xl border border-dashed border-neutral-200 relative p-0.5 overflow-hidden",
+        "w-full justify-self-center aspect-square rounded-xl border border-dashed border-neutral-200 dark:border-neutral-600 relative p-0.5 overflow-hidden",
         "[--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-neutral-100)]/10",
         className
       )}

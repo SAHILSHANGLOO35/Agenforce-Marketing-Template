@@ -96,7 +96,7 @@ export const MobileNavbar = () => {
                   <Link
                     key={item.title}
                     href={item.href}
-                    className="text-xl text-neutral-600 dark:text-shadow-neutral-400 font-medium"
+                    className="text-xl text-neutral-600 dark:text-neutral-200 dark:text-shadow-neutral-400 font-medium"
                   >
                     {item.title}
                   </Link>

@@ -14,10 +14,10 @@ export const FeaturesSecondary = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-y md:divide-y-0 md:divide-x divide-neutral-200 dark:divide-neutral-800">
           <div>
             <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
+              <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 Agent Studio
               </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-balance max-w-md mt-2">
                 Design, launch and customize AI agents for marketing, sales,
                 support and ops, built around your workflows.
               </p>
@@ -29,10 +29,10 @@ export const FeaturesSecondary = () => {
 
           <div>
             <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
+              <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 Multi-Agent Orchestration
               </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-balance max-w-md mt-2">
                 Coordinate multiple agents across workflows using memory,
                 interrupts, and conditional logic.
               </p>

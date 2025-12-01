@@ -128,7 +128,7 @@ export const SkeletonOne = () => {
   ];
 
   return (
-    <div className="flex-1 flex flex-col gap-2 rounded-t-3xl  mx-auto w-full h-full bg-neutral-100 border border-neutral-200 inset-x-10 inset-y-2 absolute pt-2 px-2">
+    <div className="flex-1 flex flex-col gap-2 rounded-t-3xl  mx-auto w-full h-full bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-200 inset-x-10 inset-y-2 absolute pt-2 px-2">
       <Card>
         {cardItems.map((item, index) => (
           <motion.div
@@ -165,7 +165,7 @@ export const SkeletonOne = () => {
 
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-tl-2xl bg-white flex flex-col flex-1 items-start">
+    <div className="shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-tl-2xl bg-white dark:bg-neutral-900 flex flex-col flex-1 items-start">
       <div className="flex items-center gap-2 border-b w-full px-4 py-2">
         <RecentActivityIcon />
         <span className="text-sm font-bold text-neutral-800 dark:text-neutral-200">

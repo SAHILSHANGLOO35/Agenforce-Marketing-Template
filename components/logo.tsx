@@ -6,7 +6,7 @@ export const Logo = ({ className }: { className?: string }) => {
   return (
     <Link href="/" className={cn("flex items-center gap-1", className)}>
       <LogoIcon />
-      <span className="font-display font-extralight text-sm text-neutral-600">
+      <span className="font-display font-extralight text-sm text-neutral-600 dark:text-neutral-200">
         Agenforce
       </span>
     </Link>

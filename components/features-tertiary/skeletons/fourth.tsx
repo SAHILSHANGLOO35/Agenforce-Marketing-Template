@@ -9,6 +9,7 @@ import {
   IconFilter2Search,
   IconPointerUp,
 } from "@tabler/icons-react";
+
 export const SkeletonFour = () => {
   const items = [
     {
@@ -91,7 +92,7 @@ export const SkeletonFour = () => {
               startAutoPlay();
             }}
             className={cn(
-              "px-2 py-1 rounded-sm bg-neutral-100 flex items-center justify-center gap-1 cursor-pointer text-xs active:scale-98 transition duration-200 opacity-50",
+              "px-2 py-1 rounded-sm bg-neutral-100 dark:text-black flex items-center justify-center gap-1 cursor-pointer text-xs active:scale-98 transition duration-200 opacity-50",
               selected.title === item.title && "opacity-100 inset-shadow-sm",
               item.className
             )}
@@ -130,47 +131,39 @@ export const Card = ({
   return (
     <motion.div
       key={title}
-      className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-2xl bg-white flex flex-col items-start gap-4"
+      className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 dark:bg-neutral-900 rounded-2xl bg-white flex flex-col items-start gap-4"
     >
-      {" "}
       <div className="flex items-center gap-2">
-        {" "}
         <motion.div
           initial={{ opacity: 0, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
           className={cn(
-            "size-6 rounded-full text-white bg-neutral-200 flex items-center justify-center shrink-0 mt-1"
+            "size-6 rounded-full text-white bg-neutral-200 dark:bg-neutral-600 flex items-center justify-center shrink-0 mt-1"
           )}
         >
-          {" "}
-          {icon}{" "}
-        </motion.div>{" "}
+          {icon}
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, filter: "blur(10px)" }}
           animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ delay: 0.1, ease: "easeInOut" }}
-          className="text-lg font-bold text-neutral-800 shrink-0"
+          className="text-lg font-bold text-neutral-800 dark:text-neutral-200 shrink-0"
         >
-          {" "}
-          {title}{" "}
-        </motion.p>{" "}
-      </div>{" "}
+          {title}
+        </motion.p>
+      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, ease: "easeInOut" }}
       >
-        {" "}
-        <p className="text-base font-normal text-neutral-600">
-          {" "}
-          Tone Guidelines{" "}
-        </p>{" "}
-        <p className="text-sm font-normal text-neutral-600 rounded-sm border border-dashed border-neutral-200 dark:border-neutral-800 px-2 py-1 mt-2 mb-4">
-          {" "}
-          {description}{" "}
-        </p>{" "}
-        <div className="mt-2 flex flex-row flex-wrap gap-2">
-          {" "}
+        <p className="text-base font-normal text-neutral-600 dark:text-neutral-400">
+          Tone Guidelines
+        </p>
+        <p className="text-sm font-normal text-neutral-600 rounded-sm border border-dashed border-neutral-200 dark:border-neutral-700 dark:text-neutral-400 px-2 py-1 mt-2 mb-4">
+          {description}
+        </p>
+        <div className="hidden md:flex mt-2 flex-row flex-wrap gap-2">
           {tags.map((tag, index) => (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -178,16 +171,11 @@ export const Card = ({
               transition={{ delay: 0.3 + index * 0.1, ease: "easeInOut" }}
               key={index}
             >
-              {" "}
-              <Tag
-                key={tag.title + index}
-                icon={tag.icon}
-                title={tag.title}
-              />{" "}
+              <Tag key={tag.title + index} icon={tag.icon} title={tag.title} />
             </motion.div>
-          ))}{" "}
-        </div>{" "}
-      </motion.div>{" "}
+          ))}
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -195,8 +183,7 @@ export const Card = ({
 const Tag = ({ icon, title }: { icon: React.ReactNode; title: string }) => {
   return (
     <div className="flex items-center gap-2 px-1 py-0.5 border border-neutral-200 rounded-sm text-sm">
-      {" "}
-      {icon} <p className="text-xs text-neutral-500">{title}</p>{" "}
+      {icon} <p className="text-xs text-neutral-500">{title}</p>
     </div>
   );
 };

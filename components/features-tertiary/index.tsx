@@ -13,13 +13,13 @@ export const FeaturesTertiary = () => {
     <section className="pt-10 md:pt20 lg:pt-32 px-4">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 border-y border-neutral-200 dark:border-neutral-800 divide-neutral-200 dark:divide-neutral-800">
-          <div className="border-r border-b border-neutral-200 dark:border-neutral-800">
+          <div className="md:border-r md:border-b border-neutral-200 dark:border-neutral-800">
             <div>
               <div className="p-4 md:p-8">
-                <h2 className="text-lg font-bold text-neutral-800">
+                <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                   Audit Trail
                 </h2>
-                <p className="text-neutral-600 text-balance max-w-md mt-2">
+                <p className="text-neutral-600 text-balance max-w-md mt-2 dark:text-neutral-400">
                   Tracks every agent action with full input-output visibility
                   and timestamps.
                 </p>
@@ -30,12 +30,12 @@ export const FeaturesTertiary = () => {
             </div>
           </div>
 
-          <div className="border-b border-neutral-200 dark:border-neutral-800">
+          <div className="md:border-b border-neutral-200 dark:border-neutral-800">
             <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
+              <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 Role-Based Access
               </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-balance max-w-md mt-2">
                 Controls who can launch, review, or manage agents based on
                 roles.
               </p>
@@ -45,12 +45,12 @@ export const FeaturesTertiary = () => {
             </CardSkeleton>
           </div>
 
-          <div className="border-r border-neutral-200 dark:border-neutral-800">
+          <div className="md:border-r border-neutral-200 dark:border-neutral-800">
             <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
+              <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 Approval Queue
               </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-balance max-w-md mt-2">
                 Sends agent-generated content to human reviewers before
                 it&apos;s published.
               </p>
@@ -62,10 +62,10 @@ export const FeaturesTertiary = () => {
 
           <div>
             <div className="p-4 md:p-8">
-              <h2 className="text-lg font-bold text-neutral-800">
+              <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
                 Guardrail Engine
               </h2>
-              <p className="text-neutral-600 text-balance max-w-md mt-2">
+              <p className="text-neutral-600 dark:text-neutral-400 text-balance max-w-md mt-2">
                 Applies brand, tone, and policy checks before output goes live.
               </p>
             </div>

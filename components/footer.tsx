@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+
 import { Container } from "./container";
-import { LogoIcon } from "./logo";
+import { Logo } from "./logo";
 import { SubHeading } from "./subheading";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
@@ -10,8 +11,10 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTwitter,
+  IconMoon,
   IconSun,
 } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
 
 export const Footer = () => {
   const productItems = [
@@ -64,16 +67,19 @@ export const Footer = () => {
     },
   ];
 
+  const { theme, setTheme } = useTheme();
+
+  const handleThemeChange = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <section className="py-10 md:py-20 lg:pt-32 px-4 overflow-hidden">
       <footer className="border-t border-neutral-200 dark:border-neutral-800 pt-10 md:pt-20 lg:pt-32 lg:pb-10 relative perspective-distant">
         <Container className="grid grid-cols-1 md:grid-cols-5 gap-10 px-4 relative z-20">
           <div className="md:col-span-2 flex flex-col gap-4 items-start">
             <div className="flex gap-1 items-center">
-              <LogoIcon />
-              <span className="text-sm font-display text-neutral-600 dark:text-neutral-800">
-                Agenforce
-              </span>
+              <Logo />
             </div>
             <SubHeading className="text-neutral-500">
               Safe, observable, outcome-driven AI
@@ -145,7 +151,17 @@ export const Footer = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <IconSun className="text-black dark:text-neutral-50 size-4" />
+              {theme === "dark" ? (
+                <IconMoon
+                  className="text-black dark:text-neutral-50 size-4"
+                  onClick={handleThemeChange}
+                />
+              ) : (
+                <IconSun
+                  className="text-black dark:text-neutral-50 size-4"
+                  onClick={handleThemeChange}
+                />
+              )}
               <IconBrandInstagram className="text-black dark:text-neutral-50 size-4 cursor-pointer" />
               <IconBrandTwitter className="text-black dark:text-neutral-50 size-4 cursor-pointer" />
               <IconBrandLinkedin className="text-black dark:text-neutral-50 size-4 cursor-pointer" />

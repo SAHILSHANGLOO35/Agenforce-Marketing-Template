@@ -71,7 +71,7 @@ export const SkeletonOne = () => {
   return (
     <div
       ref={ref}
-      className="flex-1 flex flex-col gap-2 rounded-t-3xl max-w-sm mx-auto w-full h-full bg-neutral-100 border border-neutral-200 inset-x-0 absolute p-2"
+      className="flex-1 flex flex-col gap-2 rounded-t-3xl max-w-sm mx-auto w-full h-full bg-neutral-100 dark:bg-neutral-900 dark:border-neutral-800 border border-neutral-200 inset-x-0 absolute p-2"
     >
       {activeCards &&
         activeCards.map((item) => (
@@ -121,7 +121,7 @@ export const Card = ({
         scale: { duration: 0.3, ease: "easeOut" },
         y: { duration: 0.3, ease: "easeOut" },
       }}
-      className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-2xl bg-white flex items-start gap-4"
+      className="p-4 shadow-black/10 border border-transparent ring-1 ring-black/10 rounded-2xl bg-white dark:bg-neutral-800 flex items-start gap-4"
     >
       <div
         className={cn(
@@ -134,8 +134,12 @@ export const Card = ({
         {icon}
       </div>
       <div>
-        <p className="text-lg font-bold text-neutral-800">{title}</p>
-        <p className="text-base font-normal text-neutral-600">{description}</p>
+        <p className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
+          {title}
+        </p>
+        <p className="text-base font-normal text-neutral-600 dark:text-neutral-400">
+          {description}
+        </p>
         <div className="mt-2 flex flex-row flex-wrap gap-2">
           <Tag icon={<SalesforceIcon />} title="Salesforce" />
           <Tag icon={<HubspotIcon />} title="Hubspot" />
@@ -148,9 +152,9 @@ export const Card = ({
 
 const Tag = ({ icon, title }: { icon: React.ReactNode; title: string }) => {
   return (
-    <div className="flex items-center gap-2 px-1 py-0.5 border border-neutral-200 rounded-sm text-sm">
+    <div className="flex items-center gap-2 px-1 py-0.5 border border-neutral-200 dark:border-neutral-500 rounded-sm text-sm">
       {icon}
-      <p className="text-xs text-neutral-500">{title}</p>
+      <p className="text-xs text-neutral-500 dark:text-neutral-400">{title}</p>
     </div>
   );
 };
